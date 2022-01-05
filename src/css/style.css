@@ -1,0 +1,90 @@
+:root {
+    background-color: azure;
+    font-size: 70%;
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1,h2,h3,h4 {
+    margine-bottom: 1rem;
+}
+
+h1 {
+    font-size: 5.4rem;
+    color: #56a5eb;
+    margin-bottom: 5rem;
+}
+
+h1 > span {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+/*.logo {*/
+/*    margin: 5rem;*/
+/*}*/
+
+/*.logo-img{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#quiz {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.main-container > * {
+    width: 100%;
+}
+
+
+
+.btn {
+    table-layout: fixed;
+    font-size: 1.8rem;
+    padding: 20px;
+    text-align: center;
+    border: none;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #56a5eb;
+    background-color: #fff;
+}
+
+.btn:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+
