@@ -3,7 +3,7 @@
     margin-bottom: 0.5rem;
     width: 100%;
     font-size: 1.8rem;
-    border: 0.1rem solid rgb(85,165,235);
+    border: 0.1rem solid rgb(255,255,255);
     background-color: #fff;
     text-align: center;
 }
@@ -18,13 +18,18 @@
     padding: 1.5rem;
 }
 
-.correct {
-    background-color: GREEN;
+#scale1 , #scale2, #scale3, #scale4{
+    margin-top:1.7rem;
 }
 
-.incorrect {
-    background-color: RED;
-}
+/*.correct {*/
+/*    background-color: GREEN;*/
+/*}*/
+
+/*.incorrect {*/
+/*    background-color: RED;*/
+/*}*/
+
 
 #hud {
     display: flex;
@@ -70,3 +75,18 @@
     background-color: #4caf50;
     color: white;
 }
+
+/*[type="checkbox"]:not(:checked),*/
+/*[type="checkbox"]:checked{*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    opacity: 0.01;*/
+/*}*/
+/*[type="checkbox"]:not(:checked)+label,*/
+/*[type="checkbox"]:checked + label {*/
+/*    position: relative;*/
+/*    padding-left: 2.3em;*/
+/*    font-size: 1.05em;*/
+/*    line-height: 1.7;*/
+/*    cursor: pointer;*/
+/*}*/
