@@ -3,6 +3,7 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
 const questionCounterText = document.getElementById("questionCounter");
 
 let currentQuestion = {};
+let answers = [];
 let acceptingAnswers = false;
 let questionCounter = 0;
 let availableQuestions = [];
@@ -90,6 +91,16 @@ if(previous) {
 }
 
 
+//question_id selection data_number
+// answerQuestion = (answer)=> {
+//    //if the question hasnt been answered before then the question wouldnt be in the answers array then add answer
+//     const hasQuestionB!!(answers.find((selectedAnswer) => {
+//         selectedAnswer.id = answer.id;
+//     }));
+//     // if the an answer selection is in the array remove it
+//
+//
+// }
 
 
 
