@@ -27,11 +27,21 @@ template.innerHTML= `
         <div class="quiz_footer">
             <button class="quiz_footer_button prev">Previous</button>
             <div class="quiz_footer_total_questions">
-                <span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>
+                <span>1/10</span>
             </div>
             <button class="quiz_footer_button next">Next</button>
         </div>
     </div>
+    <div class="modal-overlay">
+        <div class="info_box">
+        <div class="info-title"><span>Quiz paused!</span></div>
+        <div class="buttons">
+            <button class="resume">resume</button>
+            <button class="quit">Exit Quiz</button>
+        </div>
+    </div>
+    
+</div>
     
 `
 
@@ -60,8 +70,6 @@ class Quiz extends HTMLElement {
         const que_text = this.shadowRoot.querySelector(".que_text");
         const option_list = this.shadowRoot.querySelector(".option_list");
 
-        console.log(window.document)
-
         //creating a new span and div tag for question and option and passing the value using array index
         let que_tag = '<span>'+ question.numb + ". " + question.question +'</span>';
         let option_tag = '<div class="option"><span>'+ question.options[0] +'</span></div>'
@@ -73,10 +81,26 @@ class Quiz extends HTMLElement {
     
         const option = option_list.querySelectorAll(".option");
 
-        // set onclick attribute to all available options
-        for(i=0; i < option.length; i++){
-            option[i].setAttribute("onclick", "optionSelected(this)");
-        }
+        // // set onclick attribute to all available options
+        // for(i=0; i < option.length; i++){
+        //     option[i].setAttribute("onclick", "optionSelected(this)");
+        // }
+    }
+
+    openModal() {
+        this.shadowRoot.querySelector(".modal-overlay").style.display = "block";
+    }
+
+    closeModal() {
+        this.shadowRoot.querySelector(".modal-overlay").style.display = "none";
+    }
+    connectedCallback(){
+        this.shadowRoot.querySelector(".quiz_header_timer").addEventListener('click', () => this.openModal())
+        this.shadowRoot.querySelector(".resume").addEventListener('click', () => this.closeModal())
+    }
+    disconnectedCallback(){
+        this.shadowRoot.querySelector('.quiz_header_timer').removeEventListener()
+        this.shadowRoot.querySelector('.resume').removeEventListener()
     }
 }
 
