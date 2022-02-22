@@ -1,7 +1,7 @@
 import actions from './actions.js';
 import mutations from './mutations.js';
 import Store from './store.js';
-import { loadState, saveState } from "./utils/persistState.js";
+import { loadState, saveState } from "../lib/persistState.js";
 
 
 const defaultState = {

@@ -1,4 +1,4 @@
-import Person from "../classes/person.js";
+import Person from "../../../m/person.js";
 
 export default {
     createUser(state, payload) {
