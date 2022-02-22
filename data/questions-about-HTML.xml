@@ -8,146 +8,8 @@
     </category>
   </question>
 
-<!-- question: 532  -->
-  <question type="essay">
-    <name>
-      <text>Inline elements</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>List the names of 5 HTML<strong> inline elements</strong> (write only the element names without using tag syntax).</p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.0000000</penalty>
-    <hidden>0</hidden>
-    <responseformat>plain</responseformat>
-    <responserequired>1</responserequired>
-    <responsefieldlines>5</responsefieldlines>
-    <attachments>0</attachments>
-    <attachmentsrequired>0</attachmentsrequired>
-    <graderinfo format="moodle_auto_format">
-      <text></text>
-    </graderinfo>
-    <responsetemplate format="html">
-      <text></text>
-    </responsetemplate>
-  </question>
-
-<!-- question: 0  -->
-  <question type="category">
-    <category>
-        <text>$cat2$/top/HTML/HTML5</text>
-
-    </category>
-  </question>
-
-<!-- question: 614  -->
-  <question type="essay">
-    <name>
-      <text>New structure elements</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>List the names of 5 elements introduced by HTML5 for defining the structure of a webpage. Write only the element names without using tag syntax.</p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text><![CDATA[<p>header, main, footer, section, article, figure, nav, aside<br></p>]]></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.0000000</penalty>
-    <hidden>0</hidden>
-    <responseformat>editor</responseformat>
-    <responserequired>1</responserequired>
-    <responsefieldlines>15</responsefieldlines>
-    <attachments>0</attachments>
-    <attachmentsrequired>0</attachmentsrequired>
-    <graderinfo format="moodle_auto_format">
-      <text></text>
-    </graderinfo>
-    <responsetemplate format="html">
-      <text></text>
-    </responsetemplate>
-  </question>
-
-<!-- question: 0  -->
-  <question type="category">
-    <category>
-        <text>$cat2$/top/HTML/Multimedia</text>
-
-    </category>
-  </question>
-
-<!-- question: 2538  -->
-  <question type="essay">
-    <name>
-      <text>SVG advantages</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>List three of the advantages that the SVG format has over proprietary formats such as Flash and Silverlight.<br></p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text><![CDATA[<p>SVG is well integrated with other web technologies (such as CSS and JS/DOM), open-source, platform-independent, and searchable.<br></p>]]></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.0000000</penalty>
-    <hidden>0</hidden>
-    <responseformat>plain</responseformat>
-    <responserequired>1</responserequired>
-    <responsefieldlines>5</responsefieldlines>
-    <attachments>0</attachments>
-    <attachmentsrequired>0</attachmentsrequired>
-    <graderinfo format="html">
-      <text></text>
-    </graderinfo>
-    <responsetemplate format="html">
-      <text></text>
-    </responsetemplate>
-  </question>
-
-<!-- question: 0  -->
-  <question type="category">
-    <category>
-        <text>$cat2$/top/HTML</text>
-
-    </category>
-  </question>
-
-<!-- question: 531  -->
-  <question type="essay">
-    <name>
-      <text>XHTML and HTML5 design goals</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>List three of the five top-level goals in the design of XHTML and HTML5:<br></p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text><![CDATA[<ul>
-<li>Less presentation, more structure</li>
-<li>More accessibility</li>
-<li>Less scripting</li>
-<li>More usability</li>
-<li class="current">More device independence</li>
-</ul>]]></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.0000000</penalty>
-    <hidden>0</hidden>
-    <responseformat>plain</responseformat>
-    <responserequired>1</responserequired>
-    <responsefieldlines>5</responsefieldlines>
-    <attachments>0</attachments>
-    <attachmentsrequired>0</attachmentsrequired>
-    <graderinfo format="moodle_auto_format">
-      <text></text>
-    </graderinfo>
-    <responsetemplate format="html">
-      <text></text>
-    </responsetemplate>
-  </question>
-
 <!-- question: 2516  -->
-  <question type="cloze">
+  <question type="gapfill">
     <name>
       <text>Cross-reference</text>
     </name>
@@ -177,7 +39,7 @@
   </question>
 
 <!-- question: 726  -->
-  <question type="cloze">
+  <question type="gapfill">
     <name>
       <text>HTML5  video element</text>
     </name>
