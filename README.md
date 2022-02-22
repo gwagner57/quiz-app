@@ -7,6 +7,22 @@ The questions of a quiz, and the answer options of a multiple-choice question, s
 
 The app's default language for text items is EN.
 
+## Use Cases
+
+Possible use cases:
+
+1. A quiz editor manages (creates/updates/deletes) quizzes, assuming that there is a (localStorage or external JSON file) question database.
+2. A user takes a quiz: 
+    1. user selects a quiz from a list of categorized quizzes 
+    2. the quiz questions are presented to the user (all on one page) 
+    3. user can enter answers
+    4. user submits their answers
+    5. the quiz results are presented
+2. A quiz editor manages (creates/updates/deletes) quiz questions.
+3. A quiz editor manages (updates/deletes) quiz performances
+
+The main use cases are the first two.
+
 ## Basic version
 
 The basic version of the app supports multiple-choice questions only.   
