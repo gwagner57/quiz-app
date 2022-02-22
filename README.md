@@ -18,8 +18,8 @@ Possible use cases:
     3. user can enter answers
     4. user submits their answers
     5. the quiz results are presented
-2. A quiz editor manages (creates/updates/deletes) quiz questions.
-3. A quiz editor manages (updates/deletes) quiz performances
+3. A quiz editor manages (creates/updates/deletes) quiz questions.
+4. A quiz editor manages (updates/deletes) quiz performances.
 
 The main use cases are the first two.
 
