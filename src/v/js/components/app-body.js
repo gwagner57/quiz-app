@@ -3,7 +3,7 @@ import store from '../store/index.js';
 
 var template = document.createElement('template')
 template.innerHTML= `
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../../v/css/main.css" />
     <main class="app_body">
         <slot />
     </main>

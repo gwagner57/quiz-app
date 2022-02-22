@@ -1,6 +1,6 @@
 var template = document.createElement('template')
 template.innerHTML= `
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../../v/css/main.css" />
     <div class="info_box">
         <div class="info-title"><span>Quiz paused!</span></div>
         <div class="buttons">

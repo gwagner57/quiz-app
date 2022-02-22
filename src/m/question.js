@@ -1,4 +1,5 @@
-class Question {
+
+export default class Question {
     constructor(id, type, category, text, hasManyCorrectAnswers, answerOptions) {
       this.id = id;
       this.type = type;

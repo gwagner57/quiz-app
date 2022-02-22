@@ -3,10 +3,10 @@
 
 var template = document.createElement('template')
 template.innerHTML= `
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../../v/css/main.css" />
     <div class="quiz_page">
         <div class="quiz_header">
-            <img alt = "logo" height="65" width ="65" src ="resources/logo.svg"/>
+            <img alt="logo" height="65" width ="65" src ="../../../src/resources/logo.svg"/>
            
             <div class="quiz_header_timer">
                 <div class="time_left_txt">Time Left</div>
@@ -19,6 +19,7 @@ template.innerHTML= `
             <div class="que_text">
                 <!-- Here I've inserted question from JavaScript -->
             </div>
+            
             <div class="option_list">
                 <!-- Here I've inserted options from JavaScript -->
             </div>
