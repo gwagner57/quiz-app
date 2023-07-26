@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Quiz App Design</title>
+  </head>
+
+  <body><h1>Quiz App Design</h1><p>The quiz app is based on a database that
+  contains multi-lingual quiz questions. The basic version of the app consists
+  of three parts:</p><ol>
+      <li>A component that allows selecting a file in the Moodle XML question
+      format and uploads the questions (with type="multichoice" or
+      "shortanswer" or "numerical") to the app's database.</li>
+
+      <li>A component that allows selecting a quiz from the database and then
+      creates/renders a static webpage (HTML document) containing the entire
+      quiz (questions with answer options)</li>
+
+      <li>A front-end component that allows a user taking a quiz by loading a
+      quiz webpage. This includes providing a quiz clock and a feed-back page
+      after the quiz has been completed and evaluated (on the front-end
+      computer). During the quiz, a <em>quiz performance</em> record collects,
+      for each multiple-choice question, a set of sequence numbers of the
+      chosen answer options, allowing to evaluate/grade the user's quiz
+      performance.</li>
+    </ol><p>The basic version is to support multiple-choice questions, short
+  answer questions and numeric answer questions. The questions of a quiz, and
+  the answer options of a multiple-choice question, should always be presented
+  in a random order (shuffled).</p><p>The app's default language for text
+  items is EN.</p><h2>Database Schema</h2><p>The DB has the following tables
+  (called "collections" in Firestore):</p><p><b>quizzes</b></p><ul>
+      <li>id (primary key)</li>
+
+      <li>title</li>
+
+      <li>titleTextItem (optional): a text item number referencing titles in
+      other languages</li>
+
+      <li>questions: a list of question ID numbers like [302754, 308115,
+      ...]</li>
+
+      <li>availableLanguages: a list of language codes like [DE, FR, ES]</li>
+    </ul><p><b>questions</b></p><ul>
+      <li>id (primary key)</li>
+
+      <li>category: an enumeration index with 1/2/3/... corresponding to
+      "multichoice"/"shortanswer"/"numerical"/...</li>
+
+      <li>questionText: HTML Document Fragment</li>
+
+      <li>questionTextItem (optional): a text item number for referencing
+      question texts in other languages</li>
+
+      <li>generalFeedback: HTML Document Fragment</li>
+
+      <li>generalFeedbackTextItem (optional): a text item number for
+      referencing question texts in other languages</li>
+
+      <li>hasManyCorrectAnswers: Boolean (only relevant for "multichoice"
+      questions)</li>
+
+      <li>answerOptions (only relevant for "multichoice" questions)<ul>
+          <li>sequenceNo: a natural number (1, 2, ...) that identifies the
+          answer option</li>
+
+          <li>answerText: HTML Document Fragment</li>
+
+          <li>answerTextItem (optional): a text item number referencing answer
+          texts in other languages</li>
+
+          <li>isCorrect: Boolean</li>
+
+          <li>gradePoints (optional): [-100, 100] <br />the correct answer
+          options need to add up to 100 in the case of
+          <i>hasManyCorrectAnswers</i>, and incorrect answer options may have
+          negative points</li>
+
+          <li>answerOptionFeedback: HTML Document Fragment</li>
+
+          <li>answerOptionFeedbackTextItem (optional): a text item number for
+          referencing answer option feedback texts in other languages</li>
+        </ul></li>
+
+      <li>caseMustMatch: Boolean (only relevant for "shortanswer"
+      questions)</li>
+
+      <li>correctAnswers: a list of String values (only relevant for
+      "shortanswer" questions)</li>
+
+      <li>partiallyCorrectAnswers: (only relevant for "shortanswer"
+      questions)<ul>
+          <li>answerText: String</li>
+
+          <li>gradePoints: [25, 33, 50, 66, 75]</li>
+        </ul></li>
+
+      <li>correctNumericalAnswer: Number (only relevant for "numerical"
+      questions)</li>
+    </ul><p><b>text_items</b></p><ul>
+      <li>id</li>
+
+      <li>textItemNumber</li>
+
+      <li>language: ISO language code (EN, DE, FR, ES, ...)</li>
+
+      <li>text</li>
+    </ul><p>The combination of "textItemNumber" and "language" is a
+  key.</p></body>
+</html>
