@@ -12,10 +12,10 @@ class Quiz {
     //Todo
     async loadQuestions(){
       try {
-        const questionRecords = (await fetch("../questions.json")).json()
+        const questionRecords = (await fetch("../../data/questions.json")).json()
         this.questions = questionRecords.map( questRec => new Question( questRec));
       } catch (error) {
-        
+        console.error( error.name +": "+ error.message);
       }
     }
 }
