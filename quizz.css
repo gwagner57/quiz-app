@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(219, 224, 233);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+    gap: 1em;
+}
+.container>*{
+    width: 100%;
+}
+.top{
+    width: 100%;
+    border: 1px solid black;
+}
+#Quizz-description{
+    display:inline-block;
+    width: 49%;
+}
+#timer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    right: 0;
+    font-size: 25px;
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+  }
+
+
+#top{
+    width: 100%;
+}
+.question{
+    border: 1px solid black;
+    background-color: white;
+}
