@@ -20,7 +20,7 @@ function startTimer() {
     seconds = '0' + seconds;
   }
 
-  timerElement.textContent = minutes + ':' + seconds;
+  timerElement.textContent = 'Time left ' + minutes + ':' + seconds;
 }
 
 var timerInterval = setInterval(startTimer, 1000);

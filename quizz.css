@@ -10,7 +10,7 @@ body{
     height: 100vh;
     display: flex;
     justify-content:flex-start;
-    align-items:flex-start;
+    align-items:center;
     flex-direction: column;
     gap: 1em;
 }
@@ -18,29 +18,42 @@ body{
     width: 100%;
 }
 .top{
-    width: 100%;
-    border: 1px solid black;
+    border: 1px solid rgb(36, 37, 35);
+    background-color: rgb(44, 66, 45);
+    color: aliceblue;
+    position: relative;
 }
 #Quizz-description{
     display:inline-block;
-    width: 49%;
+    width: 80%;
+    vertical-align: middle;
+    flex-grow: 1;
 }
 #timer {
-    position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    right: 0;
     font-size: 25px;
     display: inline-block;
-    text-align: right;
-    width: 50%;
+    text-align: center;
+    min-width: 50px;
+    background-color: rgb(255, 59, 59);
+    vertical-align: middle;
   }
 
-
-#top{
-    width: 100%;
-}
 .question{
     border: 1px solid black;
     background-color: white;
+    width: 80%;
 }
+#sequence{
+    width: 2%;
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(103, 143, 102);
+    height: 100%;
+    vertical-align:top;
+    color: aliceblue;
+  }
+  .question-text{
+    display: inline-block;
+    width:97%;
+  }

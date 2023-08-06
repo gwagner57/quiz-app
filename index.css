@@ -31,3 +31,7 @@ body{
     display: inline-block;
     font-size: 16px;
   }
+  #sequence{
+    width: 10%;
+    display: inline-block;
+  }
