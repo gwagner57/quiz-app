@@ -1,3 +1,4 @@
+
 body{
     background-color: rgb(219, 224, 233);
 }
@@ -14,46 +15,61 @@ body{
     flex-direction: column;
     gap: 1em;
 }
-.container>*{
+.container > *{
     width: 100%;
 }
 .top{
     border: 1px solid rgb(36, 37, 35);
     background-color: rgb(44, 66, 45);
     color: aliceblue;
-    position: relative;
+    position: sticky;
+    top: 0%;
 }
 #Quizz-description{
     display:inline-block;
-    width: 80%;
+    width: 70%;
     vertical-align: middle;
     flex-grow: 1;
+    margin-left: 10%;
 }
 #timer {
-    position: sticky;
     font-size: 25px;
     display: inline-block;
     text-align: center;
-    min-width: 50px;
     background-color: rgb(255, 59, 59);
     vertical-align: middle;
+    width: 8%;
   }
 
 .question{
     border: 1px solid black;
     background-color: white;
     width: 80%;
+    display: flex;
+    align-items: stretch;
 }
-#sequence{
+.sequence{
     width: 2%;
-    display: inline-block;
     text-align: center;
     background-color: rgb(103, 143, 102);
-    height: 100%;
-    vertical-align:top;
     color: aliceblue;
+    height: 100%;
+    flex: 1;
   }
-  .question-text{
+  .question-right{
+    flex-direction: column;
+    width: 97%;
+  }
+
+  .btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
     display: inline-block;
-    width:97%;
+    font-size: 16px;
+    width: 10%;
   }
+ 

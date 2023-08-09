@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+ <!-- question: 1  -->
+  <question id="1">
+    <type>"multiple_choice"</type>
+    <category>WEB PAGES</category>
+    <text>What does HTML stand for?</text>
+    <hasmanycorrectanswers>0</hasmanycorrectanswers>
+    <choice1> Hyper Text Markup Language </choice1>
+    <choice2> Hyper Text Making Language </choice2>
+    <choice3> H    T     M       L </choice3>
+    <choice4> it doesn't stand for anything </choice4>
+    <answer> 1 </answer>
+  </question>   
+ <!-- question: 2  -->
+  <question id="2">
+    <type>"multiple_choice"</type>
+    <category>WEB PAGES</category>
+    <text>What does HTML stand for?</text>
+    <hasmanycorrectanswers>0</hasmanycorrectanswers>
+    <choice1> Hyper Text Markup Language </choice1>
+    <choice2> Hyper Text Making Language </choice2>
+    <choice3> H    T     M       L </choice3>
+    <choice4> it doesn't stand for anything </choice4>
+    <answer> 1 </answer>
+  </question>  
+   <!-- question: 3  -->
+  <question id="3">
+    <type>"multiple_choice"</type>
+    <category>WEB PAGES</category>
+    <text>What does HTML stand for?</text>
+    <hasmanycorrectanswers>0</hasmanycorrectanswers>
+    <choice1> Hyper Text Markup Language </choice1>
+    <choice2> Hyper Text Making Language </choice2>
+    <choice3> H    T     M       L </choice3>
+    <choice4> it doesn't stand for anything </choice4>
+    <answer> 1 </answer>
+  </question>  
+   <!-- question: 4  -->
+  <question id="4">
+    <type>"multiple_choice"</type>
+    <category>WEB PAGES</category>
+    <text>What does HTML stand for?</text>
+    <hasmanycorrectanswers>0</hasmanycorrectanswers>
+    <choice1> Hyper Text Markup Language </choice1>
+    <choice2> Hyper Text Making Language </choice2>
+    <choice3> H    T     M       L </choice3>
+    <choice4> it doesn't stand for anything </choice4>
+    <answer> 1 </answer>
+  </question>  
+ <!-- question: 5  -->
+  <question id="5">
+    <type>"multiple_choice"</type>
+    <category>WEB PAGES</category>
+    <text>What does HTML stand for?</text>
+    <hasmanycorrectanswers>0</hasmanycorrectanswers>
+    <choice1> Hyper Text Markup Language </choice1>
+    <choice2> Hyper Text Making Language </choice2>
+    <choice3> H    T     M       L </choice3>
+    <choice4> it doesn't stand for anything </choice4>
+    <answer> 1 </answer>
+  </question>  
+</quiz>

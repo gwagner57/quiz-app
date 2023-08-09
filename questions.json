@@ -1,0 +1,67 @@
+[
+
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "category":"WEB PAGES",
+      "text": "What does HTML stand for?",
+      "hasmanycorrectanswers": "0",
+      "choice1": "Hyper Text Markup Language",
+      "choice2": "Hyper Text Making Language",
+      "choice3": "H    T     M       L",
+      "choice4": "it doesn't stand for anything",
+      "answer": 1
+    },
+  
+    { 
+      "id": 2,
+      "type": "multiple_choice",
+      "category":"WEB PAGES",
+      "text": "What does CSS stand for?",
+      "hasmanycorrectanswers": "0",  
+      "choice1": "Cat Something Something",
+      "choice2": "I ran out of ideas",
+      "choice3": "It doesn't stand for anything",
+      "choice4": "Cascading Style Sheet",
+      "answer": 4
+    },
+  
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "category":"WEB PAGES",
+      "text": "How do you embed a css file into an HTML file?",
+      "hasmanycorrectanswers": "0",    
+      "choice1": "<link rel=stylesheet href=style.css>",
+      "choice2": "<link class=stylesheet href=style.css>",
+      "choice3": "It's not possible",
+      "choice4": "i don't know",
+      "answer": 1
+    },
+  
+    { "id": 4,
+      "type": "multiple_choice",
+      "category":"WEB PAGES",
+      "text": "The Prolog of an XML document is optional. It may include the following:",
+      "hasmanycorrectanswers": "0",
+      "choice1": "An XML declaration",
+      "choice2": "A namespace declaration such as : <xmlns:ex=http://example.org>",
+      "choice3": "A document type declaration such as <!DOCTYPE langlist SYSTEM langlist.dtd>",
+      "choice4": "The root element of the XML document",
+      "answer": 1
+    },
+  
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "category":"WEB PAGES",
+      "text": "Which of the following items may be included in the content of an XML element?",
+      "hasmanycorrectanswers": "0",
+      "choice1": "Characters (simple text)",
+      "choice2": "Processing instructions",
+      "choice3": "Comments",
+      "choice4": "Elements",
+      "answer": 4
+    }
+  ]
+  
