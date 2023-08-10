@@ -47,44 +47,38 @@ fetch('questions.xml')
     // Add the "Finish the Quizz" button
     const finishButton = document.createElement('a');
     finishButton.setAttribute('class', 'btn');
-    finishButton.setAttribute('href', 'performance.html');
+    finishButton.setAttribute('href', '#');
     finishButton.textContent = 'Finish the Quizz';
     containerDiv.appendChild(finishButton);
+    // Function to collect user choices
+    
+  // Function to collect user choices
+  function collectUserChoices() {
+    const userChoices = [];
+    const questionElements = document.querySelectorAll('.question');
+
+    questionElements.forEach((questionElement, index) => {
+    const selectedChoice = document.querySelector(`input[name="question${index + 1}-answer"]:checked`);
+      if (selectedChoice) {
+        const selectedValue = parseInt(selectedChoice.value);
+        userChoices.push(selectedValue);
+     }
+  });
+
+  return userChoices;
+  }
+
+    // Function to handle the "Finish the Quizz" button click
+    function finishQuizz() {
+      const userChoices = collectUserChoices();
+      localStorage.setItem('userChoices', JSON.stringify(userChoices));
+      window.location.href = 'performance.html'; // Change to the URL of your result page
+    }
+
+    // Add event listener to the "Finish the Quizz" button
+    finishButton.addEventListener('click', finishQuizz);
   })
   .catch(error => {
     console.error('Error fetching or parsing the XML file:', error);
   });
-
-
-
-
-
-
-
-
-  // Function to collect user choices
-function collectUserChoices() {
-  const userChoices = [];
-  const questionElements = document.querySelectorAll('.question');
-
-  questionElements.forEach((questionElement, index) => {
-    const selectedChoice = document.querySelector(`input[name="question${index + 1}-answer"]:checked`);
-    if (selectedChoice) {
-      const selectedValue = parseInt(selectedChoice.value);
-      userChoices.push(selectedValue);
-    }
-  });
-
-  return userChoices;
-}
-
-// Function to handle the "Finish the Quizz" button click
-function finishQuizz() {
-  const userChoices = collectUserChoices();
-  localStorage.setItem('userChoices', JSON.stringify(userChoices));
-  window.location.href = 'performance.html'; // Change to the URL of your result page
-}
-
-// Add event listener to the "Finish the Quizz" button
-const finishButton = document.querySelector('.btn');
-finishButton.addEventListener('click', finishQuizz);
+    

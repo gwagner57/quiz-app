@@ -19,27 +19,50 @@ body{
     width: 100%;
 }
 .top{
-    border: 1px solid rgb(36, 37, 35);
-    background-color: rgb(44, 66, 45);
-    color: aliceblue;
+   /* border: 1px solid rgb(36, 37, 35);
+   /* background-color: rgb(44, 66, 45); */
+   /* color: aliceblue; */
     position: sticky;
     top: 0%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 #Quizz-description{
-    display:inline-block;
-    width: 70%;
+  /*  display:inline-block;
+    width: 100%;
     vertical-align: middle;
-    flex-grow: 1;
-    margin-left: 10%;
+ /*   flex-grow: 1; 
+    margin-left: 10%; */
+    text-align: center;
+    margin-top: 3%;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+
+}
+.timercontainer{
+    display: flex;
+    align-items:flex-end;
+    justify-content: flex-end;
 }
 #timer {
     font-size: 25px;
-    display: inline-block;
     text-align: center;
     background-color: rgb(255, 59, 59);
-    vertical-align: middle;
-    width: 8%;
-  }
+    width: 8%;    
+ }
 
 .question{
     border: 1px solid black;
@@ -47,9 +70,15 @@ body{
     width: 80%;
     display: flex;
     align-items: stretch;
+    border-radius: 10px; /* Adjust this value to control the roundness */
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+
+
 }
+
 .sequence{
-    width: 2%;
+    min-width: 2%;
     text-align: center;
     background-color: rgb(103, 143, 102);
     color: aliceblue;
@@ -59,8 +88,11 @@ body{
   .question-right{
     flex-direction: column;
     width: 97%;
+    padding: 5px 0 5px 30px;
   }
-
+  .question-text{
+    font-family: 'Droid serif', serif; font-size: 20px; font-weight: 400; font-style: italic;
+  }
   .btn {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -71,5 +103,15 @@ body{
     display: inline-block;
     font-size: 16px;
     width: 10%;
-  }
+    transform: translateY(2px); /* Push the button down on hover */
+    box-shadow: 0 6px #2E723A; /* Darker shadow on top when hovering */
+    border-radius: 10px; /* Adjust this value to control the roundness */
+
+}
+.btn:hover{
+    transform: translateY(0px); /* Push the button down on hover */
+    box-shadow: 0 0px #2E723A; /* Darker shadow on top when hovering */
+    background-color: #1a3a1b; /* Green */
+
+}
  

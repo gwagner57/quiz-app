@@ -21,6 +21,22 @@ body{
     flex-direction: column;
     gap: 2em;
 }
+.container > h1 {
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
 .btn {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -30,5 +46,14 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
-  
+    transform: translateY(2px); /* Push the button down on hover */
+    box-shadow: 0 6px #2E723A; /* Darker shadow on top when hovering */
+    border-radius: 10px; /* Adjust this value to control the roundness */
+
+}
+.btn:hover{
+    transform: translateY(0px); /* Push the button down on hover */
+    box-shadow: 0 0px #2E723A; /* Darker shadow on top when hovering */
+    background-color: #1a3a1b; /* Green */
+
+}
