@@ -1,7 +1,6 @@
 # Online Quiz App
-A JS/LocalStorage and CloudFlare Workers KV app for online quizzes
 
-The basic version supports multiple-choice questions only, while the full version also supports short answer questions, numeric answer questions and gap fill questions. 
+The basic version supports *multiple-choice* questions, *short answer* questions and *numeric* questions, while the full version also supports gap fill questions. 
 
 The questions of a quiz, and the answer options of a multiple-choice question, should always be presented in a random order (shuffled).
 
