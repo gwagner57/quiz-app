@@ -2,6 +2,7 @@
     {
       "id": 1,
       "title": "Quiz 1",
+      "questionsIds": [1,2,3],
       "titleTextItem": "",
       "questions": [1,2,3],
       "availableLanguages": ""
@@ -9,8 +10,9 @@
     {
       "id": 2,
       "title": "Quiz 2",
+      "questionsIds": [1,2,5],
       "titleTextItem": "",
-      "questions": [1,2,3],
+      "questions": [1,2,5],
       "availableLanguages": ""
     }
   ]

@@ -1,17 +1,18 @@
 import { promises as fsPromises } from "fs";
 import Quiz from "./Quiz.mjs"; // Import the Quiz class
+const selectedQuizId = parseInt(process.argv[2]); // The value at index 2
+export { selectedQuizId };
 async function generateQuizHTML() {
   const quiz = new Quiz({
     // Initialize quiz properties
-    /*"id": 1,
-      "title": "Quiz 1",
+    //  "id": 1
+    /*  "title": "Quiz 1",
       "titleTextItem": "",
       "questions": [1,2,3],
       "availableLanguages": "" */
   });
-
+  //console.log(quiz.id);
   await quiz.loadQuestions(); // Load question data
-
   let quizHTML = `<html>
     <head>
       <title>${quiz.title}</title>
