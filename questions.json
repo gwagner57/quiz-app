@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "name": "Question 1",
+      "topic": "Science",
+      "type": "multichoice",
+      "questionText": "What is the capital of France?",
+      "answerOptions": ["Paris", "Berlin", "London"],
+      "correctAnswerIndex": 0,
+      "availableLanguages": ["en", "fr"]
+    },
+    {
+      "id": 2,
+      "name": "Question 2",
+      "topic": "Mathematics",
+      "type": "numerical",
+      "questionText": "What is 2 + 2?",
+      "correctAnswer": 4,
+      "availableLanguages": ["en"]
+    },
+    {
+      "id": 3,
+      "name": "Question 3",
+      "topic": "Language",
+      "type": "shortanswer",
+      "questionText": "Translate 'Hello' into French.",
+      "correctAnswer": "Bonjour",
+      "availableLanguages": ["en", "fr"]
+    },
+    {
+      "id": 4,
+      "name": "Question 4",
+      "topic": "Science",
+      "type": "multichoice",
+      "questionText": "What is the capital of France?",
+      "answerOptions": ["Paris", "Berlin", "London"],
+      "correctAnswerIndex": 0,
+      "availableLanguages": ["en", "fr"]
+    },
+    {
+      "id": 5,
+      "name": "Question 5",
+      "topic": "Mathematics",
+      "type": "numerical",
+      "questionText": "What is 2 + 2?",
+      "correctAnswer": 4,
+      "availableLanguages": ["en"]
+    }
+
+  ]
+  
