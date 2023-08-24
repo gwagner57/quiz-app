@@ -27,8 +27,12 @@
   answer questions and numeric answer questions. The questions of a quiz, and
   the answer options of a multiple-choice question, should always be presented
   in a random order (shuffled).</p><p>The app's default language for text
-  items is EN.</p><h2>Database Schema</h2><p>The DB has the following tables
-  (called "collections" in Firestore):</p><p><b>quizzes</b></p><ul>
+  items is EN.</p>
+  <h2>Database Schema</h2>
+  <p>The DB has the following tables
+  (called "collections" in Firestore):</p>
+  <p><b>quizzes</b></p>
+  <ul>
       <li>id (primary key)</li>
 
       <li>title</li>
@@ -40,10 +44,14 @@
       ...]</li>
 
       <li>availableLanguages: a list of language codes like [DE, FR, ES]</li>
-    </ul><p><b>questions</b></p><ul>
+    </ul>
+  <p><b>questions</b></p>
+  <ul>
       <li>id (primary key)</li>
+      <li>name</li>
+      <li>topic: a string in the form of "topic" or "topic/subtopic" or "topic/subtopic/subsubtopic"</li>
 
-      <li>category: an enumeration index with 1/2/3/... corresponding to
+      <li>type: an enumeration index with 1/2/3/... corresponding to
       "multichoice"/"shortanswer"/"numerical"/...</li>
 
       <li>questionText: HTML Document Fragment</li>
@@ -96,7 +104,9 @@
 
       <li>correctNumericalAnswer: Number (only relevant for "numerical"
       questions)</li>
-    </ul><p><b>text_items</b></p><ul>
+    </ul>
+  <p><b>text_items</b></p>
+  <ul>
       <li>id</li>
 
       <li>textItemNumber</li>
