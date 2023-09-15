@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <link rel="stylesheet" type="text/css" href="Quiz.css">
+              <title>quiz.title</title>
+            </head>
+            <body>
+            <div class="container" id="container">
+              <h1 id ="title">Quiz Title</h1>
+              <script>
+                 // Get the current URL
+                const currentURL = window.location.href;
+
+                  // Extract the file name from the URL
+                  const fileName = currentURL.substring(currentURL.lastIndexOf('/')+1);
+    
+    
+                    const fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
+
+
+                     // Display the file name inside the <h1> element
+                   const fileNameDisplay = document.getElementById("title");
+                   fileNameDisplay.textContent =  fileNameWithoutExtension;
+                </script><div id=q0>
+<p>List the names of 3 new elements introduced by HTML5 for embedding multimedia content into a Web page. Write only the element names, without using tag syntax.</p><input type="text" name='New HTML5 multimedia elements' />
+</div>
+<div id=q1>
+<p>Which of the following HTML fragments are <b>not</b> valid XHTML?</p><input type="checkbox" name='Non-XHTML' value='<pre>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Embedding SVG in HTML5&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      
+        <p>This is not XHTML: the <code>head</code> element must have a <code>title</code> child element!</p>' /> <pre>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Embedding SVG in HTML5&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      
+        <p>This is not XHTML: the <code>head</code> element must have a <code>title</code> child element!</p><br>
+<input type="checkbox" name='Non-XHTML' value='<pre>&lt;table&gt;
+   &lt;tr&gt;&lt;td&gt;Tom&lt;/td&gt;&lt;td&gt;€32&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;Mary&lt;/td&gt;&lt;td&gt;€47&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+      
+        <p>This is not XHTML: the <code>table</code> element must have a <code>tbody</code> child element!</p>' /> <pre>&lt;table&gt;
+   &lt;tr&gt;&lt;td&gt;Tom&lt;/td&gt;&lt;td&gt;€32&lt;/td&gt;&lt;/tr&gt;
+   &lt;tr&gt;&lt;td&gt;Mary&lt;/td&gt;&lt;td&gt;€47&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+      
+        <p>This is not XHTML: the <code>table</code> element must have a <code>tbody</code> child element!</p><br>
+<input type="checkbox" name='Non-XHTML' value='<pre>&lt;audio autoplay&gt; 
+  &lt;source src="song.ogg" type="audio/ogg" /&gt;  
+  &lt;source src="song.mp3" type="audio/mpeg" /&gt; 
+&lt;/audio&gt;
+</pre><br>
+      
+        <p>This is not XHTML: the <code>autoplay</code> attribute must be used with the standard attribute-value syntax <code>autoplay="autoplay"</code>.<br></p>' /> <pre>&lt;audio autoplay&gt; 
+  &lt;source src="song.ogg" type="audio/ogg" /&gt;  
+  &lt;source src="song.mp3" type="audio/mpeg" /&gt; 
+&lt;/audio&gt;
+</pre><br>
+      
+        <p>This is not XHTML: the <code>autoplay</code> attribute must be used with the standard attribute-value syntax <code>autoplay="autoplay"</code>.<br></p><br>
+<input type="checkbox" name='Non-XHTML' value='<pre>&lt;dl&gt;
+  &lt;dt&gt;Item1&lt;/dt&gt;&lt;dd&gt;Definition of Item1&lt;/dd&gt;
+  &lt;dt&gt;Item2&lt;/dt&gt;&lt;dd&gt;Definition of Item2&lt;/dd&gt;
+  &lt;dt&gt;Item3&lt;/dt&gt;&lt;dd&gt;Definition of Item3&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+      
+        <p>No, this is valid XHTML.<br></p>' /> <pre>&lt;dl&gt;
+  &lt;dt&gt;Item1&lt;/dt&gt;&lt;dd&gt;Definition of Item1&lt;/dd&gt;
+  &lt;dt&gt;Item2&lt;/dt&gt;&lt;dd&gt;Definition of Item2&lt;/dd&gt;
+  &lt;dt&gt;Item3&lt;/dt&gt;&lt;dd&gt;Definition of Item3&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+      
+        <p>No, this is valid XHTML.<br></p><br>
+<input type="checkbox" name='Non-XHTML' value='<pre>&lt;table&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;&lt;th colspan="2"&gt;Enrol now!&lt;/th&gt;&lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The American Civil War&lt;/td&gt;
+      &lt;td&gt;Dr. John Wroughton&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Karl the Great&lt;/td&gt;
+      &lt;td&gt;Dr. Maria Smith&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+      
+        <p>No, this is valid XHTML: the <code>table</code> element has a  <code>tbody</code> element.</p>' /> <pre>&lt;table&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;&lt;th colspan="2"&gt;Enrol now!&lt;/th&gt;&lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The American Civil War&lt;/td&gt;
+      &lt;td&gt;Dr. John Wroughton&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Karl the Great&lt;/td&gt;
+      &lt;td&gt;Dr. Maria Smith&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+      
+        <p>No, this is valid XHTML: the <code>table</code> element has a  <code>tbody</code> element.</p><br>
+</div>
+<div id="Submitd"><button id="Submit">Submit</button></div>
+            <div id="results-container"></div>
+            <script src="listener.js"></script>

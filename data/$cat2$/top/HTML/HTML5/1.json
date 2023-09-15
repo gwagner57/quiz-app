@@ -1,0 +1,190 @@
+[
+  {
+    "name": [
+      {
+        "attributes": {},
+        "value": "New HTML5 multimedia elements"
+      }
+    ],
+    "penalty": [
+      {
+        "attributes": {},
+        "value": "0.3333333"
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML/HTML5\n\n    ",
+    "hidden": [
+      {
+        "attributes": {},
+        "value": "0"
+      }
+    ],
+    "type": "shortanswer",
+    "generalfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "<p>audio, video, svg, canvas, embed</p>"
+      }
+    ],
+    "questiontext": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "<p>List the names of 3 new elements introduced by HTML5 for embedding multimedia content into a Web page. Write only the element names, without using tag syntax.</p>"
+      }
+    ],
+    "defaultgrade": [
+      {
+        "attributes": {},
+        "value": "1.0000000"
+      }
+    ],
+    "answer": [
+      {
+        "attributes": {
+          "format": "moodle_auto_format",
+          "fraction": "100"
+        },
+        "value": "audio, video, svg"
+      }
+    ],
+    "usecase": [
+      {
+        "attributes": {},
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "questiontext": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "<p>Which of the following HTML fragments are <b>not</b> valid XHTML?</p>"
+      }
+    ],
+    "type": "multichoice",
+    "generalfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": ""
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML/HTML5\n\n    ",
+    "answer": [
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "33.33333"
+        },
+        "value": "<pre>&lt;!DOCTYPE html&gt;\n&lt;html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"&gt;\n  &lt;head&gt;\n    &lt;meta charset=\"UTF-8\" /&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;Embedding SVG in HTML5&lt;/h1&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n</pre>\n      \n        <p>This is not XHTML: the <code>head</code> element must have a <code>title</code> child element!</p>"
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "33.33333"
+        },
+        "value": "<pre>&lt;table&gt;\n   &lt;tr&gt;&lt;td&gt;Tom&lt;/td&gt;&lt;td&gt;€32&lt;/td&gt;&lt;/tr&gt;\n   &lt;tr&gt;&lt;td&gt;Mary&lt;/td&gt;&lt;td&gt;€47&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;\n</pre>\n      \n        <p>This is not XHTML: the <code>table</code> element must have a <code>tbody</code> child element!</p>"
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "33.33333"
+        },
+        "value": "<pre>&lt;audio autoplay&gt; \n  &lt;source src=\"song.ogg\" type=\"audio/ogg\" /&gt;  \n  &lt;source src=\"song.mp3\" type=\"audio/mpeg\" /&gt; \n&lt;/audio&gt;\n</pre><br>\n      \n        <p>This is not XHTML: the <code>autoplay</code> attribute must be used with the standard attribute-value syntax <code>autoplay=\"autoplay\"</code>.<br></p>"
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "-50"
+        },
+        "value": "<pre>&lt;dl&gt;\n  &lt;dt&gt;Item1&lt;/dt&gt;&lt;dd&gt;Definition of Item1&lt;/dd&gt;\n  &lt;dt&gt;Item2&lt;/dt&gt;&lt;dd&gt;Definition of Item2&lt;/dd&gt;\n  &lt;dt&gt;Item3&lt;/dt&gt;&lt;dd&gt;Definition of Item3&lt;/dd&gt;\n&lt;/dl&gt;</pre>\n      \n        <p>No, this is valid XHTML.<br></p>"
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "-50"
+        },
+        "value": "<pre>&lt;table&gt;\n  &lt;tfoot&gt;\n    &lt;tr&gt;&lt;th colspan=\"2\"&gt;Enrol now!&lt;/th&gt;&lt;/tr&gt;\n  &lt;/tfoot&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td&gt;The American Civil War&lt;/td&gt;\n      &lt;td&gt;Dr. John Wroughton&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Karl the Great&lt;/td&gt;\n      &lt;td&gt;Dr. Maria Smith&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n</pre>\n      \n        <p>No, this is valid XHTML: the <code>table</code> element has a  <code>tbody</code> element.</p>"
+      }
+    ],
+    "answernumbering": [
+      {
+        "attributes": {},
+        "value": "none"
+      }
+    ],
+    "incorrectfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "Your answer is incorrect."
+      }
+    ],
+    "name": [
+      {
+        "attributes": {},
+        "value": "Non-XHTML"
+      }
+    ],
+    "penalty": [
+      {
+        "attributes": {},
+        "value": "0.3333333"
+      }
+    ],
+    "single": [
+      {
+        "attributes": {},
+        "value": "false"
+      }
+    ],
+    "defaultgrade": [
+      {
+        "attributes": {},
+        "value": "1.0000000"
+      }
+    ],
+    "shuffleanswers": [
+      {
+        "attributes": {},
+        "value": "true"
+      }
+    ],
+    "partiallycorrectfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "Your answer is partially correct."
+      }
+    ],
+    "shownumcorrect": [
+      {
+        "attributes": {},
+        "value": ""
+      }
+    ],
+    "hidden": [
+      {
+        "attributes": {},
+        "value": "0"
+      }
+    ],
+    "correctfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "Your answer is correct."
+      }
+    ]
+  }
+]
