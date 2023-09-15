@@ -20,7 +20,7 @@
     const categoryDropdown = document.getElementById("categoryDropdown");
 
     // Fetch the text file
-    fetch("Categories.txt")
+    fetch("https://rawcdn.githack.com/gwagner57/quiz-app/main/docs/Categories.txt?token=GHSAT0AAAAAACFSDHPJW2RXV6MWBQNVN6EGZIELQFQ")
         .then(response => response.text())
         .then(data => {
             // Split the text into lines
@@ -45,8 +45,7 @@
     redirectButton.addEventListener('click', () => {
       const selectedCategory = categoryDropdown.value;
       if (selectedCategory) {
-        //console.log(selectedCategory);
-        window.location.href = 'file:///home/aloo/Desktop/cat/'+ selectedCategory+ '/1.html'
+        window.location.href = 'https://rawcdn.githack.com/gwagner57/quiz-app/main/data/'+selectedCategory+'/1.html?token=GHSAT0AAAAAACFSDHPIS56DO2CGZL4WW2XIZIEI3CQ'
       }
     });
 
