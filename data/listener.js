@@ -67,12 +67,13 @@ const userInputArrays = collectUserInputs();
 
 
 //console.log(userInputArrays);
+var originalURL = window.location.href;
 
 
 
 
 // URL of the JSON file you want to load
-const jsonFileURL = window.location.href + fileNameDisplay.textContent+'.json';
+const jsonFileURL = originalURL.replace(".html", ".json");
 
 console.log(window.location.href);
 
