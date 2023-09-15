@@ -72,9 +72,9 @@ const userInputArrays = collectUserInputs();
 
 
 // URL of the JSON file you want to load
-const jsonFileURL = fileNameDisplay.textContent+'.json';
+const jsonFileURL = window.location.href + fileNameDisplay.textContent+'.json';
 
-
+console.log(window.location.href);
 
 
 
