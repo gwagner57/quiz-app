@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>takeQuiz</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Category to take a quiz in it</Select></h1>
+    <select id="categoryDropdown">
+        <option value="">Select a category</option>
+    </select>
+    <button id="redirectButton">Take the Quiz</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Reference to the select element
+    const categoryDropdown = document.getElementById("categoryDropdown");
+
+    // Fetch the text file
+    fetch("Categories.txt")
+        .then(response => response.text())
+        .then(data => {
+            // Split the text into lines
+            const lines = data.split('\n');
+
+            // Iterate over each line and add it as an option
+            lines.forEach(line => {
+                const option = document.createElement("option");
+                option.text = line.trim(); // Trim to remove any leading/trailing white space
+                option.value = line.trim(); // Set the value if needed
+                categoryDropdown.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching the text file:", error);
+        });
+    });
+
+    const categoryDropdown = document.getElementById('categoryDropdown');
+    const redirectButton = document.getElementById('redirectButton');
+
+    redirectButton.addEventListener('click', () => {
+      const selectedCategory = categoryDropdown.value;
+      if (selectedCategory) {
+        //console.log(selectedCategory);
+        window.location.href = 'file:///home/aloo/Desktop/cat/'+ selectedCategory+ '/1.html'
+      }
+    });
+
+
+    </script>
+</body>
+</html>
