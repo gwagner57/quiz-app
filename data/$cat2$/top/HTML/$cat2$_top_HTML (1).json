@@ -1,0 +1,524 @@
+[
+  {
+    "shuffleanswers": [
+      {
+        "attributes": {},
+        "value": "true"
+      }
+    ],
+    "questiontext": [
+      {
+        "value": "<p>Which of the following documents are valid XHTML?</p>",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "defaultgrade": [
+      {
+        "value": "1.0000000",
+        "attributes": {}
+      }
+    ],
+    "name": [
+      {
+        "attributes": {},
+        "value": "Valid XHTML"
+      }
+    ],
+    "type": "multichoice",
+    "partiallycorrectfeedback": [
+      {
+        "attributes": {
+          "format": "moodle_auto_format"
+        },
+        "value": "1"
+      }
+    ],
+    "single": [
+      {
+        "attributes": {},
+        "value": "false"
+      }
+    ],
+    "correctfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": ""
+      }
+    ],
+    "answer": [
+      {
+        "value": "<pre>&lt;xhtml:html xmlns:xhtml=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;xhtml:head&gt;\n    &lt;xhtml:title&gt;Page title&lt;/xhtml:title&gt;\n  &lt;/xhtml:head&gt;\n  &lt;xhtml:body&gt; &lt;p&gt;Paragraph&lt;/p&gt; &lt;/xhtml:body&gt;\n&lt;/xhtml:html&gt;\n</pre>\n      \n        <p>This is a valid XHTML fragment, since all mandatory elements are provided, and all elements are in the XHTML namespace (for which a namespace prefix is declared).</p>",
+        "attributes": {
+          "format": "html",
+          "fraction": "50"
+        }
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "-50"
+        },
+        "value": "<pre>&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;head&gt;&lt;/head&gt;\n  &lt;body&gt; &lt;p /&gt; &lt;/body&gt;\n&lt;/html&gt;\n</pre>\n      \n        <p>This is not valid, since the &lt;<code style=\"font-weight: bold;\">head&gt;</code> mandatory child element &lt;<strong><code>title&gt;</code></strong> is <strong>missing</strong>.<br />Also, the &lt;p&gt; element is not an empty one.</p>"
+      },
+      {
+        "attributes": {
+          "fraction": "-50",
+          "format": "html"
+        },
+        "value": "<pre>&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;body&gt; &lt;hr /&gt; &lt;/body&gt;\n&lt;/html&gt;\n</pre>\n      \n        <p>This is not a valid XHTML fragment, since the <code style=\"font-weight: bold;\">html</code> element's mandatory child element <strong><code>head</code></strong> is <strong>missing</strong>.</p>"
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "50"
+        },
+        "value": "<pre>&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;head&gt;\n    &lt;title&gt;Page title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt; &lt;hr /&gt; &lt;/body&gt;\n&lt;/html&gt;\n</pre>\n      \n        <p>This is a valid XHTML fragment, since all mandatory elements are provided, and all elements are in the XHTML namespace (which is declared as the default namespace).</p>"
+      }
+    ],
+    "hidden": [
+      {
+        "attributes": {},
+        "value": "0"
+      }
+    ],
+    "incorrectfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": ""
+      }
+    ],
+    "penalty": [
+      {
+        "attributes": {},
+        "value": "0.0000000"
+      }
+    ],
+    "generalfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": ""
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML\n\n    ",
+    "answernumbering": [
+      {
+        "value": "none",
+        "attributes": {}
+      }
+    ]
+  },
+  {
+    "shuffleanswers": [
+      {
+        "attributes": {},
+        "value": "true"
+      }
+    ],
+    "penalty": [
+      {
+        "attributes": {},
+        "value": "0.1000000"
+      }
+    ],
+    "generalfeedback": [
+      {
+        "value": "",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "answer": [
+      {
+        "attributes": {
+          "fraction": "50",
+          "format": "html"
+        },
+        "value": "<pre>&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;head&gt;\n    &lt;title&gt;My Title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;p&gt;Lorem ipsum...&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;</pre>\n      \n        <br>"
+      },
+      {
+        "value": "<pre>&lt;h:html xmlns:h=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;h:head&gt;\n    &lt;h:title&gt;My Title&lt;/h:title&gt;\n  &lt;/h:head&gt;\n  &lt;h:body&gt;\n    &lt;h:div&gt;Lorem ipsum...&lt;/h:div&gt;\n  &lt;/h:body&gt;\n&lt;/h:html&gt;</pre>\n      \n        <br>",
+        "attributes": {
+          "format": "html",
+          "fraction": "50"
+        }
+      },
+      {
+        "value": "<pre>&lt;h:html xmlns:h=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;h:head&gt;\n    &lt;h:meta charset=\"utf-8\"&gt;\n  &lt;/h:head&gt;\n  &lt;h:body&gt;\n    &lt;h:p&gt;Lorem ipsum...&lt;/h:p&gt;\n  &lt;/h:body&gt;\n&lt;/h:html&gt;</pre>\n      \n        The <code>head</code> element must have a <code>title</code> child element!",
+        "attributes": {
+          "format": "html",
+          "fraction": "-33.33333"
+        }
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "-33.33333"
+        },
+        "value": "<pre>&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;head&gt;\n    &lt;title&gt;My Title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;a id=\"example\" href=\"http://www.examples.org\"/&gt;Jump!&lt;/a&gt;\n  &lt;/body&gt;\n&lt;/html&gt;</pre>\n      \n        The <code>body</code> element does not allow any inline elements, such as <code>a</code>, as child elements."
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "-33.33333"
+        },
+        "value": "<pre>&lt;h:html xmlns:h=\"http://www.w3.org/1999/xhtml\"&gt;\n  &lt;head&gt;\n    &lt;title&gt;My Title&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;p&gt;Lorem ipsum...&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/h:html&gt;</pre>\n      \n        <p>Since there is no default namespace declaration, the elements <code>head</code>, <code>title</code>, <code>body</code> and <code>p</code> are not XHTML elements!<br></p>"
+      }
+    ],
+    "questiontext": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "<p>Which of the following&nbsp;HTML fragments are valid XHTML?</p><code></code>"
+      }
+    ],
+    "defaultgrade": [
+      {
+        "attributes": {},
+        "value": "1.0000000"
+      }
+    ],
+    "partiallycorrectfeedback": [
+      {
+        "attributes": {
+          "format": "moodle_auto_format"
+        },
+        "value": "1"
+      }
+    ],
+    "hidden": [
+      {
+        "value": "0",
+        "attributes": {}
+      }
+    ],
+    "incorrectfeedback": [
+      {
+        "value": "",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "name": [
+      {
+        "attributes": {},
+        "value": "XHTML block-level and inline elements"
+      }
+    ],
+    "answernumbering": [
+      {
+        "value": "none",
+        "attributes": {}
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML\n\n    ",
+    "correctfeedback": [
+      {
+        "value": "",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "single": [
+      {
+        "value": "false",
+        "attributes": {}
+      }
+    ],
+    "type": "multichoice"
+  },
+  {
+    "hidden": [
+      {
+        "value": "0",
+        "attributes": {}
+      }
+    ],
+    "shuffleanswers": [
+      {
+        "attributes": {},
+        "value": "true"
+      }
+    ],
+    "name": [
+      {
+        "attributes": {},
+        "value": "What does the &lt;ol&gt; element mark up?"
+      }
+    ],
+    "answer": [
+      {
+        "value": "<p>An open list, like</p>\n<ul style=\"list-style-type:circle\"><li>bla</li><li>blabla</li><li>...<br></li></ul>\n      \n        <p>This concept does not exist.</p>",
+        "attributes": {
+          "fraction": "0",
+          "format": "html"
+        }
+      },
+      {
+        "value": "<p>An itemized list, like</p>\n<ul style=\"list-style-type:square\"><li>bla</li><li>blabla</li><li>blablabla<br></li></ul>\n      \n        <p>This corresponds to <code>ul</code>.</p>",
+        "attributes": {
+          "format": "html",
+          "fraction": "0"
+        }
+      },
+      {
+        "attributes": {
+          "format": "html",
+          "fraction": "0"
+        },
+        "value": "<p>An ordinary (basic) list, like</p>\n<ul style=\"list-style-type:none\"><li>bla</li><li>blabla</li><li>blablabla<br></li></ul>\n      \n        <p>This concept does not exist.</p>"
+      },
+      {
+        "attributes": {
+          "fraction": "100",
+          "format": "html"
+        },
+        "value": "<p>An enumerated list, like</p>\n<ol><li>bla</li><li>blabla</li><li>blablabla<br></li></ol>\n      \n        <p>An enumerated list is also called <span style=\"font-style: italic;\">ordered </span>list.</p>"
+      }
+    ],
+    "single": [
+      {
+        "attributes": {},
+        "value": "true"
+      }
+    ],
+    "questiontext": [
+      {
+        "value": "<p>What does the <code>&lt;ol&gt;</code> element mark up?</p>",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "penalty": [
+      {
+        "value": "0.0000000",
+        "attributes": {}
+      }
+    ],
+    "type": "multichoice",
+    "partiallycorrectfeedback": [
+      {
+        "value": "1",
+        "attributes": {
+          "format": "moodle_auto_format"
+        }
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML\n\n    ",
+    "incorrectfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": ""
+      }
+    ],
+    "generalfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": ""
+      }
+    ],
+    "answernumbering": [
+      {
+        "attributes": {},
+        "value": "none"
+      }
+    ],
+    "correctfeedback": [
+      {
+        "value": "",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "defaultgrade": [
+      {
+        "attributes": {},
+        "value": "1.0000000"
+      }
+    ]
+  },
+  {
+    "shuffleanswers": [
+      {
+        "value": "true",
+        "attributes": {}
+      }
+    ],
+    "correctfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "Your answer is correct."
+      }
+    ],
+    "generalfeedback": [
+      {
+        "value": "",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "partiallycorrectfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "Your answer is partially correct."
+      }
+    ],
+    "questiontext": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "<p>Which is the HTML version used by the page http://reiseauskunft.bahn.de?</p><p>You can find it out by going to the website and inspect its HTML code.<br></p>"
+      }
+    ],
+    "penalty": [
+      {
+        "value": "0.3333333",
+        "attributes": {}
+      }
+    ],
+    "defaultgrade": [
+      {
+        "value": "1.0000000",
+        "attributes": {}
+      }
+    ],
+    "shownumcorrect": [
+      {
+        "attributes": {},
+        "value": ""
+      }
+    ],
+    "incorrectfeedback": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "Your answer is incorrect."
+      }
+    ],
+    "hidden": [
+      {
+        "attributes": {},
+        "value": "0"
+      }
+    ],
+    "name": [
+      {
+        "value": "HTML version",
+        "attributes": {}
+      }
+    ],
+    "answer": [
+      {
+        "value": "<p>XHTML 1.1<br></p>",
+        "attributes": {
+          "format": "html",
+          "fraction": "100"
+        }
+      },
+      {
+        "value": "<p>HTML 4<br></p>",
+        "attributes": {
+          "fraction": "0",
+          "format": "html"
+        }
+      },
+      {
+        "value": "<p>XHTML 1.0<br></p>",
+        "attributes": {
+          "format": "html",
+          "fraction": "0"
+        }
+      },
+      {
+        "attributes": {
+          "fraction": "0",
+          "format": "html"
+        },
+        "value": "<p>HTML5<br></p>"
+      },
+      {
+        "value": "<p>XHTML5<br></p>",
+        "attributes": {
+          "fraction": "0",
+          "format": "html"
+        }
+      }
+    ],
+    "type": "multichoice",
+    "single": [
+      {
+        "attributes": {},
+        "value": "true"
+      }
+    ],
+    "answernumbering": [
+      {
+        "attributes": {},
+        "value": "none"
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML\n\n    "
+  },
+  {
+    "generalfeedback": [
+      {
+        "value": "",
+        "attributes": {
+          "format": "html"
+        }
+      }
+    ],
+    "hidden": [
+      {
+        "attributes": {},
+        "value": "0"
+      }
+    ],
+    "category": "\n        $cat2$/top/HTML\n\n    ",
+    "questiontext": [
+      {
+        "attributes": {
+          "format": "html"
+        },
+        "value": "<p>Complete the following HTML code such that the <code>a</code> element works as a cross-reference link for jumping to Figure 1:</p>\n<pre>&lt;figure id=\"fig1\"&gt;\n  &lt;img src=\"model-diagram.svg\" /&gt;\n  &lt;figcaption&gt;Figure 1: How to make a model&lt;/figcaption&gt;\n&lt;figure&gt;\n&lt;div&gt;lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ...&lt;/div&gt;\n&lt;p&gt;The diagram in &lt;a href=\"{1:SHORTANSWER_C:~=#fig1~%50%fig1}\"&gt;Figure 1&lt;/a&gt; shows how to make a model.&lt;/p&gt;\n</pre>"
+      }
+    ],
+    "name": [
+      {
+        "value": "Cross-reference",
+        "attributes": {}
+      }
+    ],
+    "type": "gapfill",
+    "penalty": [
+      {
+        "attributes": {},
+        "value": "0.3333333"
+      }
+    ]
+  }
+]
