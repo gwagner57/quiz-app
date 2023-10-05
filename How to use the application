@@ -1,4 +1,5 @@
-In docs you can find generateHtml.html file which can be downloaded and generate quiz files locally with five questions by default.
+In docs you can find generateHtml.html file which can be downloaded and generate quiz files locally with five questions by default 
+!!!(after opening the page in the browser please wiat for few seconds until the list is available as dropdwon list)!!!.
 After the quiz files have been generated you can upload them to the correct folder in the reposiroty based on the name of the folder and the topic.
 The user can take quiz by accessing takeQuiz.html and then select the category.
 After finishing the  quiz, the user can find out how much he scored.
