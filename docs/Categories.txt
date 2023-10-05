@@ -1,3 +1,0 @@
-$cat2$/top/HTML
-$cat2$/top/HTML/Multimedia
-$cat2$/top/HTML/HTML5
