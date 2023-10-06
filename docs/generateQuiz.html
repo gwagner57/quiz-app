@@ -13,12 +13,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>Select an item category:</h1>
-    <select id="categoryDropdown">
-      <option value="">Select a category</option>
-    </select>
-    <button id="generateButton">Generate HTML&JSON</button>
+    <h1>Generate Quiz page</h1>
+    <span>
+      <p>Select category</p>
+      <select id="categoryDropdown">
+        <option value="">Select a category</option>
+      </select>
+    </span>
+    <span>
+    <p>Enter the number of question in the quiz page</p>
+    <input type="text" id="Qs_nmbr" placeholder="Enter a value">
+    </span>
+    <span>
+      <p>Enter the name of the quiz page</p>
+      <input type="text" id="Qz_name" placeholder="Enter a value">
+      </span>
+    <button id="generateButton" disabled>Generate HTML&JSON</button>
     <button id="downloadButton">Download categories list</button>
+    
 
   </div>
   <script type="module">
@@ -71,29 +83,71 @@ let selectedQuestions = [];
 
     const categoryDropdown = document.getElementById('categoryDropdown');
     const generateButton = document.getElementById('generateButton');
+    const Qs_nmbr = document.getElementById('Qs_nmbr');
+    const Qz_name = document.getElementById('Qz_name');
+
+
+
+// Function to reset the input field to its default value
+function resetInput() {
+    // Set the input field's value to an empty string or its initial/default value
+    categoryDropdown.value = "";
+    Qs_nmbr.value = "";
+    Qz_name.value = "";
+    generateButton.disabled = true;
+
+
+}
+
+// Call the resetInput function when the page loads (you can also use window.onload)
+window.addEventListener("load", resetInput);
+
+
+
+
+
+
+
+
+
+
+
+// Function to check if all three inputs have values and enable the button
+function checkInputs() {
+    if (categoryDropdown.value.trim() !== "" && Qs_nmbr.value.trim() !== "" && Qz_name.value.trim() !== "") {
+      generateButton.disabled = false;
+    } 
+}
+
+// Listen for input changes in the text fields
+categoryDropdown.addEventListener("input", checkInputs);
+Qs_nmbr.addEventListener("input", checkInputs);
+Qz_name.addEventListener("input", checkInputs);
+   
+
+
 
     generateButton.addEventListener('click', () => {
       const selectedCategory = categoryDropdown.value;
-      if (selectedCategory) {
+      if (selectedCategory && Qs_nmbr && Qz_name) {
         collectionRef.where('category', '==', selectedCategory).get(selectedQuestions)
           .then((snapshot) => {
             const categoryQuestions = [];
             snapshot.forEach((doc) => {
               categoryQuestions.push(doc.data());
             });
+    const selectedQuestions = getRandomQuestions(categoryQuestions, parseInt(Qs_nmbr.value, 10));
+    //console.log(selectedQuestions);
+    const jsonString = JSON.stringify(selectedQuestions, null, 2);
 
-            const selectedQuestions = getRandomQuestions(categoryQuestions, 5);
-            //console.log(selectedQuestions);
-            const jsonString = JSON.stringify(selectedQuestions, null, 2);
-
-            // Download the JSON file
-            const blob = new Blob([jsonString], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            //link.download = `${selectedCategory}_questions.json`;
-            link.download = selectedCategory+`.json`;
-            link.click();
+    // Download the JSON file
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    //link.download = `${selectedCategory}_questions.json`;
+    link.download = Qz_name.value +`.json`;
+    link.click();
 
 
 
@@ -131,9 +185,11 @@ let selectedQuestions = [];
 
                   // Extract the file name from the URL
                   const fileName = currentURL.substring(currentURL.lastIndexOf('/')+1);
+                  
+                  // Decode any URL-encoded characters in the file name
+                   const decodedFileName = decodeURIComponent(fileName);
     
-    
-                    const fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
+                    const fileNameWithoutExtension = decodedFileName.substring(0, decodedFileName.lastIndexOf('.'));
 
 
                      // Display the file name inside the <h1> element
@@ -165,13 +221,13 @@ let selectedQuestions = [];
             });
             html += `<div id="Submitd"><button id="Submit">Submit</button></div>
             <div id="results-container"></div>
-            <script src="https://rawcdn.githack.com/gwagner57/quiz-app/main/data/listener_v1.2.js?token=GHSAT0AAAAAACFSDHPIPPPEYKWC7KHC5BBUZIUQT6A"><\/script>`;
+            <script src="./listener_v1.2.js"><\/script>`;
             const blob2 = new Blob([html], { type: 'text/html' });
             const url2 = URL.createObjectURL(blob2);
             const link2 = document.createElement('a');
             link2.id = "test";
             link2.href = url2;
-            link2.download = selectedCategory+`.html`;
+            link2.download = Qz_name.value +`.html`;
             link2.click();
           }
 
