@@ -1,6 +1,3 @@
-In docs you can find generateHtml.html file which can be downloaded and generate quiz files locally with five questions by default 
-!!!(after opening the page in the browser please wiat for few seconds until the list is available as dropdwon list)!!!.
-After the quiz files have been generated you can upload them to the correct folder in the reposiroty based on the name of the folder and the topic.
-The user can take quiz by accessing takeQuiz.html and then select the category.
-After finishing the  quiz, the user can find out how much he scored.
-The file categorylist.txt must be updated periodically to make sure the new categories allwayes added to the file, this can be done when the quizmaker export the categorieslist.txt and then upload the file.
+In docs you can find generate_Quiz.html file which can be downloaded and generate quiz files locally !!!(after opening the page in the browser please wiat for few seconds until the list is available as dropdwon list)!!!.
+You must select category, specify the number of questions and Quiz name.
+After finishing the  quiz, the user can find out how much he scored by clicking submit button.
