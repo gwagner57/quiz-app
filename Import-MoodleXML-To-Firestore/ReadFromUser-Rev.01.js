@@ -53,33 +53,41 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
     // Convert XML to JSON
     const convertQuestionNodeToJson = (node) => {
       const question = {
-        type: node.getAttribute('type'),
+        Type: node.getAttribute('type'),
       };
   
-      const childNodesArray = Array.from(node.childNodes);
-  
-      childNodesArray.forEach((childNode) => {
-        if (childNode.nodeType === 1 && childNode.tagName !== 'type') {
-          const tagName = childNode.tagName;
-          const textContent = childNode.textContent.trim();
+      const childNodesArray = Array.from(node.childNodes); 
+       childNodesArray.forEach((childNode) => {
+        if(childNode.tagName === 'name' || childNode.tagName === 'questiontext' || childNode.tagName === 'answer' || childNode.tagName === 'single' || childNode.tagName === 'generalfeedback'){       
+          if (childNode.nodeType === 1 && childNode.tagName !== 'type') {
+            let tagName;
             
-          if (!question[tagName]) {
-            question[tagName] = [];
+            if(childNode.tagName === 'single'){
+              tagName = 'HasSingleCorrectAnswer';
+            }else{
+              tagName = childNode.tagName;
+            }
+
+            const textContent = childNode.textContent.trim();
+
+            if (!question[tagName]) {
+              question[tagName] = [];
+            }
+            
+            const elementData = {
+              value: textContent,
+              attributes: {},
+            };
+  
+            const attributes = Array.from(childNode.attributes);
+            attributes.forEach((attribute) => {
+              elementData.attributes[attribute.name] = attribute.value;
+            });
+  
+            question[tagName].push(elementData);
           }
-            
-          const elementData = {
-            value: textContent,
-            attributes: {},
-          };
-  
-          const attributes = Array.from(childNode.attributes);
-          attributes.forEach((attribute) => {
-            elementData.attributes[attribute.name] = attribute.value;
-          });
-  
-          question[tagName].push(elementData);
         }
-      });
+       });
   
       return question;
     };
@@ -113,7 +121,7 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
     async function importJSONData() {
       try {
         const questionsData = JSON.parse(jsonString); // Parse JSON string directly
-        const collectionRef = db.collection('MoodleQuestions');
+        const collectionRef = db.collection('Questions');
         await addDocumentsWithCustomIDs(collectionRef, questionsData);
         console.log('Import completed successfully.');
       } catch (error) {
