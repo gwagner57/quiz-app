@@ -58,16 +58,23 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
   
       const childNodesArray = Array.from(node.childNodes); 
        childNodesArray.forEach((childNode) => {
+        // choose the required attributes
         if(childNode.tagName === 'name' || childNode.tagName === 'questiontext' || childNode.tagName === 'answer' || childNode.tagName === 'single' || childNode.tagName === 'generalfeedback'){       
           if (childNode.nodeType === 1 && childNode.tagName !== 'type') {
             let tagName;
-            
+            // adjust attribute names as per scheme
             if(childNode.tagName === 'single'){
               tagName = 'HasSingleCorrectAnswer';
+            }else  if(childNode.tagName === 'answer' && node.getAttribute('type') === 'shortanswer'){
+              tagName = 'correctAnswers';
+            }else  if(childNode.tagName === 'answer' && node.getAttribute('type') === 'numerical'){
+              tagName = 'correctNumericalAnswer';
+            }else if(childNode.tagName === 'answer'){
+              tagName = 'answerOptions';
             }else{
               tagName = childNode.tagName;
             }
-
+            
             const textContent = childNode.textContent.trim();
 
             if (!question[tagName]) {
@@ -91,7 +98,8 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
   
       return question;
     };
-  
+    
+    // add category to the questoin
     const convertXmlToJson = (xml) => {
       const xmlDoc = parseXml(xml);
       const questions = [];
@@ -121,12 +129,19 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
     async function importJSONData() {
       try {
         const questionsData = JSON.parse(jsonString); // Parse JSON string directly
-        const collectionRef = db.collection('Questions');
+        const collectionRef = db.collection('MoodleQuestions');
         await addDocumentsWithCustomIDs(collectionRef, questionsData);
         console.log('Import completed successfully.');
       } catch (error) {
         console.error('Error importing JSON data:', error);
       } finally {
+        // delete questions with no answer
+        const typeValue = ['gapfill', 'cloze', 'essay','matching']
+        const noAnswer =await db.collection('Test').where('Type','in',typeValue).get();
+        noAnswer.forEach(element => {
+         element.ref.delete();
+         console.log(`Document ${element.id} deleted from Test`);
+        });
         admin.app().delete();
       }
     }
