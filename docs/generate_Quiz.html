@@ -148,21 +148,12 @@ Qz_name.addEventListener("input", checkInputs);
     //link.download = `${selectedCategory}_questions.json`;
     link.download = Qz_name.value +`.json`;
     link.click();
-
-
-
-
-
-
-
-
-
-
-
+            
 
             async function generateHtml() {
-            console.log(selectedQuestions);
+            //console.log(selectedQuestions);
             const jsonData2 = selectedQuestions;
+            console.log(jsonData2);
             if (!jsonData2) {
             console.error('JSON data not available');
             return;
@@ -198,7 +189,8 @@ Qz_name.addEventListener("input", checkInputs);
                 <\/script>`;
 
             jsonData2.forEach((questionData, index) => {
-            const type = questionData.type;
+            const type = questionData.Type;
+            //console.log("this is QD"+type);
             const questionText = questionData.questiontext[0].value;
             html += `<div id=q${index}>\n`;
             html += `${questionText}`;
@@ -207,7 +199,8 @@ Qz_name.addEventListener("input", checkInputs);
             if (type === 'shortanswer') {
             html += `<input type="text" name='${questionData.name[0].value}' />\n`;
               } else if (type === 'multichoice') {
-                const answers = questionData.answer;
+              console.log("thisistype"+type);
+                const answers = questionData.answerOptions;
                 answers.forEach(answer => {
                   html += `<input type="checkbox" name='${questionData.name[0].value}' value='${answer.value}' /> ${answer.value}<br>\n`;
                   //console.log(answer.value);
