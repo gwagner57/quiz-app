@@ -148,10 +148,11 @@ Qz_name.addEventListener("input", checkInputs);
     //link.download = `${selectedCategory}_questions.json`;
     link.download = Qz_name.value +`.json`;
     link.click();
-         
+    
+   
 
             async function generateHtml() {
-            console.log(typeof(selectedQuestions));
+            //console.log(typeof(selectedQuestions));
             const jsonData2 =selectedQuestions;
             console.log(jsonData2);
             if (!jsonData2) {
@@ -171,7 +172,8 @@ Qz_name.addEventListener("input", checkInputs);
             <div class="container" id="container">
               <h1 id ="title">Quiz Title</h1>
               <script>
-                const test = ${selectedQuestions};
+                const test = ${JSON.stringify(selectedQuestions)};
+                //console.log(test);
                 
                  // Get the current URL
                 const currentURL = window.location.href;
@@ -360,9 +362,10 @@ function decodeHTMLEntities(input) {
 		}
 
 		// Replace HTML entities in the JSON data
+   // const test2 = JSON.parse(test);
 		const convertedData = replaceHtmlEntities(test);
-    console.log("this is test"+test);
-		//console.log("this is data"+convertedData);
+    console.log(test);
+		console.log(convertedData);
     
     
     
@@ -381,9 +384,9 @@ function decodeHTMLEntities(input) {
     score.push(0);
    }
     convertedData.forEach(question => {
-    const type = question.type;
+    const type = question.Type;
     
-    //console.log(type);
+    console.log(type);
     if (type === 'multichoice'){
     const answers = question.answerOptions;
     //console.log(answers);
