@@ -148,11 +148,11 @@ Qz_name.addEventListener("input", checkInputs);
     //link.download = `${selectedCategory}_questions.json`;
     link.download = Qz_name.value +`.json`;
     link.click();
-            
+         
 
             async function generateHtml() {
-            //console.log(selectedQuestions);
-            const jsonData2 = selectedQuestions;
+            console.log(typeof(selectedQuestions));
+            const jsonData2 =selectedQuestions;
             console.log(jsonData2);
             if (!jsonData2) {
             console.error('JSON data not available');
@@ -171,6 +171,8 @@ Qz_name.addEventListener("input", checkInputs);
             <div class="container" id="container">
               <h1 id ="title">Quiz Title</h1>
               <script>
+                const test = ${selectedQuestions};
+                
                  // Get the current URL
                 const currentURL = window.location.href;
 
@@ -194,7 +196,7 @@ Qz_name.addEventListener("input", checkInputs);
             const questionText = questionData.questiontext[0].value;
             html += `<div id=q${index}>\n`;
             html += `${questionText}`;
-        //console.log(type);
+             //console.log(type);
 
             if (type === 'shortanswer') {
             html += `<input type="text" name='${questionData.name[0].value}' />\n`;
@@ -215,7 +217,6 @@ Qz_name.addEventListener("input", checkInputs);
             html += `<div id="Submitd"><button id="Submit">Submit</button></div>
             <div id="results-container"></div>
             <script>
-              
               
               
               
@@ -333,8 +334,8 @@ function decodeHTMLEntities(input) {
   return decodedDocument.documentElement.textContent;
 }
 
-fetchJSONData(jsonFileURL)
-  .then(jsonData => {
+//fetchJSONData(jsonFileURL)
+  //.then(jsonData => {
     // Now you can use jsonData as the JSON data returned from the function
     //console.log(jsonData);
     //return jsonData;
@@ -359,9 +360,9 @@ fetchJSONData(jsonFileURL)
 		}
 
 		// Replace HTML entities in the JSON data
-		const convertedData = replaceHtmlEntities(jsonData);
-
-		//console.log(convertedData);
+		const convertedData = replaceHtmlEntities(test);
+    console.log("this is test"+test);
+		//console.log("this is data"+convertedData);
     
     
     
@@ -384,7 +385,7 @@ fetchJSONData(jsonFileURL)
     
     //console.log(type);
     if (type === 'multichoice'){
-    const answers = question.answer;
+    const answers = question.answerOptions;
     //console.log(answers);
     answers.forEach(answerr => {
     //console.log(question.name[0].value);
@@ -441,7 +442,7 @@ fetchJSONData(jsonFileURL)
 
 
     else if (type === 'shortanswer'){
-      const answers = question.answer;
+      const answers = question.correctAnswers;
       //console.log(question.answer);
       answers.forEach(answerr => {
       //console.log(question.name[0].value);
@@ -554,11 +555,11 @@ fetchJSONData(jsonFileURL)
     
 
     // You can perform further processing with jsonData here
-  })
+ // })
 
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+ // .catch(error => {
+  //  console.error('There was a problem with the fetch operation:', error);
+ // });
 
 
 
