@@ -188,7 +188,7 @@
               const questionId = \`q\${i}\`;
               const questionDiv = document.getElementById(questionId);
               // Find all input elements within the question div
-              const inputElements = questionDiv.querySelectorAll('input[type="txt"], input[type="text"], input[type="checkbox"]:checked');
+              const inputElements = questionDiv.querySelectorAll('input[type="txt"], input[type="text"], input[type="checkbox"]:checked, input[type="radio"]:checked');
                // Initialize an array for the current question ID
               userInputArrays[questionId] = [];
               // Iterate through the input elements and add them to the array
@@ -330,26 +330,6 @@
                 }
 
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 else if (type === 3){
                 const answers = question.correctNumericalAnswer;
                 answers.forEach(answerr => {
@@ -399,99 +379,30 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                else if (type === 4){
+                const answers = question.answerOptions;
+                answers.forEach(answerr => {
+                for (let i = 0; i <numberOfQuestions; i++) {
+                const questionId = \`q\${i}\`; 
+                const userInputArrayForQuestion = userInputArrays[questionId];
+                console.log(userInputArrayForQuestion);
+                if (userInputArrayForQuestion.length > 0) {
+                const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element because in case even many answer options still all the answers have the same ame so we take only the first
+                if (userInputArrayForQuestion[0].name === question.name){
+                for (let j = 0; j <userInputArrayForQuestion.length;j++){
+                if(userInputArrayForQuestion[j].value === answerr.answerText){
+                  if(score[i] == 0){
+                    score[i] += parseInt(answerr.gradePoints);
+                    console.log(score[i]);
+                }}}}} 
+                else {
+                console.log("No user inputs for question", questionId);
+                }} 
               
+                })
+                }
+              
+
 
                 })
 
@@ -525,10 +436,10 @@
                     \`;
 
                     // Open the results page in a new window/tab
-                    const resultsWindow = window.open('', '_blank');
-                    resultsWindow.document.open();
-                    resultsWindow.document.write(resultsPage);
-                    resultsWindow.document.close();
+                    //const resultsWindow = window.open('', 'decodedFileName');
+                    document.open();
+                    document.write(resultsPage);
+                    document.close();
                     }
 
                     // Add an event listener to the Submit button to trigger data collection
