@@ -93,7 +93,10 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
             // change and import shortanswer as per required scheme
             }else if(childNode.tagName === 'answer' && node.getAttribute('type') === 'shortanswer'){
               tagName = 'correctAnswers';
-              const textContent = childNode.textContent.trim();
+              const textNode = Array.from(childNode.childNodes).find(node => node.tagName === 'text');
+              const textContent =textNode.textContent.trim();
+              const feedbackNode = Array.from(childNode.childNodes).find(node => node.tagName === 'feedback');
+              const feedbackContent = feedbackNode.textContent.trim();
               
                
               const attributes = Array.from(childNode.attributes);
@@ -120,6 +123,7 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
               const elementData = {
               answerText: textContent,
               gradePoints: Grade,
+              feedBack: feedbackContent
               };
 
               question[tagName].push(elementData);
@@ -164,7 +168,10 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
             // change and import multichoice as per required scheme  
             }else if(childNode.tagName === 'answer'){
               tagName = 'answerOptions';
-              const textContent = childNode.textContent.trim();
+              const textNode = Array.from(childNode.childNodes).find(node => node.tagName === 'text');
+              const textContent =textNode.textContent.trim();
+              const feedbackNode = Array.from(childNode.childNodes).find(node => node.tagName === 'feedback');
+              const feedbackContent = feedbackNode.textContent.trim();
              
                
               const attributes = Array.from(childNode.attributes);
@@ -186,7 +193,8 @@ rl.question('Enter the path to the XML file: ', async (xmlFilePath) => {
               const elementData = {
                answerText: textContent,
                gradePoints: Grade,
-               isCorrect: Correct
+               isCorrect: Correct,
+               answerOptionFeedback: feedbackContent
               };
 
               question[tagName].push(elementData);
