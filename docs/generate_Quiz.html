@@ -151,18 +151,24 @@
                 <\/script>`;
             jsonData2.forEach((questionData, index) => {
               const type = questionData.Type;
-              const questionText = questionData.questiontext[0].value;
+              const questionText = questionData.questiontext;
               html += `<div id=q${index}>\n`;
               html += `${questionText}`;
-              if (type === 'shortanswer') {
-                html += `<input type="text" name='${questionData.name[0].value}' />\n`;
-              } else if (type === 'multichoice') {
+              if (type === 2) {
+                html += `<input type="text" name='${questionData.name}' />\n`;
+              } else if (type === 1) {
                 const answers = questionData.answerOptions;
                 answers.forEach(answer => {
-                  html += `<input type="checkbox" name='${questionData.name[0].value}' value='${answer.value}' /> ${answer.value}<br>\n`;
+                  html += `<input type="checkbox" name='${questionData.name}' value='${answer.answerText}' /> ${answer.answerText}<br>\n`;
                 });
-              } else if (type === 'gapfill'){
-                html += `<input type="txt" name='${questionData.name[0].value}' /> \n`;
+              } else if (type === 3){
+                html += `<input type="txt" name='${questionData.name}' /> \n`;
+              }
+              else if (type === 4) {
+                const answers = questionData.answerOptions;
+                answers.forEach(answer => {
+                  html += `<input type="radio" name='${questionData.name}' value='${answer.answerText}' /> ${answer.answerText}<br>\n`;
+                });
               }
               html += `</div>\n`;
             });
@@ -182,7 +188,7 @@
               const questionId = \`q\${i}\`;
               const questionDiv = document.getElementById(questionId);
               // Find all input elements within the question div
-              const inputElements = questionDiv.querySelectorAll('input[type="txt"], input[type="text"], input[type="checkbox"]:checked');
+              const inputElements = questionDiv.querySelectorAll('input[type="txt"], input[type="text"], input[type="checkbox"]:checked, input[type="radio"]:checked');
                // Initialize an array for the current question ID
               userInputArrays[questionId] = [];
               // Iterate through the input elements and add them to the array
@@ -202,11 +208,10 @@
                }
               // Display the collected user inputs in the console
 	            return userInputArrays;
-              // You can perform further processing or send the data to a server here
               }
               const userInputArrays = collectUserInputs();
               var originalURL = window.location.href;
-              // URL of the JSON file you want to load
+              // URL of the JSON file to be loaded
               const jsonFileURL = originalURL.replace(".html", ".json");
               // Function to fetch JSON data and return it as a Promise
               function fetchJSONData(jsonFileURL) {
@@ -253,7 +258,7 @@
               }
                 convertedData.forEach(question => {
                 const type = question.Type;
-                if (type === 'multichoice'){
+                if (type === 1){
                 const answers = question.answerOptions;
                 answers.forEach(answerr => {
                 for (let i = 0; i <numberOfQuestions; i++) {
@@ -261,17 +266,14 @@
                 const userInputArrayForQuestion = userInputArrays[questionId];
                 if (userInputArrayForQuestion.length > 0) {
                 const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element
-                if (userInputArrayForQuestion[0].name === question.name[0].value){
+                if (userInputArrayForQuestion[0].name === question.name){
                 console.log(userInputArrayForQuestion[0].name);
                 for (let j = 0; j <userInputArrayForQuestion.length;j++){
-                if(userInputArrayForQuestion[j].value === answerr.value){
-                score[i] += parseInt(answerr.attributes.fraction);
+                if(userInputArrayForQuestion[j].value === answerr.answerText){
+                score[i] += parseInt(answerr.gradePoints);
                 console.log(score[i]);
                 }}
-                //else{
-                //score[i] = parseInt(answerr.attributes.fraction);
-                //}
-                //Id = userInputArray[i].Id
+                
                 }
                 } 
                 else {
@@ -280,7 +282,7 @@
                 } })
 
                 }
-                else if (type === 'shortanswer'){
+                else if (type === 2){
                 const answers = question.correctAnswers;
                 answers.forEach(answerr => {
                 for (let i = 0; i <numberOfQuestions; i++) {
@@ -288,28 +290,119 @@
                 const userInputArrayForQuestion = userInputArrays[questionId];
                 if (userInputArrayForQuestion.length > 0) {
                 const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element
-                if (userInputArrayForQuestion[0].name === question.name[0].value){
+                if (userInputArrayForQuestion[0].name === question.name){
                 console.log(userInputArrayForQuestion[0].name);
                 for (let j = 0; j <userInputArrayForQuestion.length;j++){
-                if(userInputArrayForQuestion[j].value === answerr.value){
-                score[i] += parseInt(answerr.attributes.fraction);
-                console.log(score[i]);
-                }}
-                //else{
-                //score[i] = parseInt(answerr.attributes.fraction);
-                //}
-                //Id = userInputArray[i].Id
-            
-                }
-                } 
+                if(userInputArrayForQuestion[j].value === answerr.answerText){
+                  if(score[i] == 0){
+                    score[i] += parseInt(answerr.gradePoints);
+                    console.log(score[i]);
+                }}}}} 
                 else {
                 console.log("No user inputs for question", questionId);
-                }
-                
-                } })
+                }} 
+              
+                })
             
+                if(question.partiallyCorrectAnswers){
+                const pAnswers = question.partiallyCorrectAnswers;
+                pAnswers.forEach(pAnswerr => {
+                for (let i = 0; i <numberOfQuestions; i++) {
+                const questionId = \`q\${i}\`; 
+                const userInputArrayForQuestion = userInputArrays[questionId];
+                if (userInputArrayForQuestion.length > 0) {
+                const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element
+                if (userInputArrayForQuestion[0].name === question.name){
+                console.log(userInputArrayForQuestion[0].name);
+                for (let j = 0; j <userInputArrayForQuestion.length;j++){
+                if(userInputArrayForQuestion[j].value === pAnswerr.answerText){
+                  if(score[i] == 0){
+                    score[i] += parseInt(pAnswerr.gradePoints);
+                    console.log(score[i]);
+                }}}}} 
+                else {
+                console.log("No user inputs for question", questionId);
+                }} 
+              
+                })
+                }
+
+                }
+
+                
+                else if (type === 3){
+                const answers = question.correctNumericalAnswer;
+                answers.forEach(answerr => {
+                for (let i = 0; i <numberOfQuestions; i++) {
+                const questionId = \`q\${i}\`; 
+                const userInputArrayForQuestion = userInputArrays[questionId];
+                if (userInputArrayForQuestion.length > 0) {
+                const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element because in case even many answer options still all the answers have the same ame so we take only the first
+                if (userInputArrayForQuestion[0].name === question.name){
+                for (let j = 0; j <userInputArrayForQuestion.length;j++){
+                  console.log("leloooooo "+userInputArrayForQuestion[j].value+"memooooooo "+answerr.answer);
+                if(parseInt(userInputArrayForQuestion[j].value) === answerr.answer){
+                  if(score[i] == 0){
+                    score[i] += parseInt(answerr.gradePoints);
+                    console.log(score[i]);
+                }}}}} 
+                else {
+                console.log("No user inputs for question", questionId);
+                }} 
+              
+                })
+            
+                if(question.partiallyCorrectNumericalAnswers){
+                const pAnswers = question.partiallyCorrectNumericalAnswers;
+                pAnswers.forEach(pAnswerr => {
+                for (let i = 0; i <numberOfQuestions; i++) {
+                const questionId = \`q\${i}\`; 
+                const userInputArrayForQuestion = userInputArrays[questionId];
+                if (userInputArrayForQuestion.length > 0) {
+                const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element
+                if (userInputArrayForQuestion[0].name === question.name){
+                console.log(userInputArrayForQuestion[0].name);
+                for (let j = 0; j <userInputArrayForQuestion.length;j++){
+                if(parseInt(userInputArrayForQuestion[j].value) === pAnswerr.answer){
+                  if(score[i] == 0){
+                    score[i] += parseInt(pAnswerr.gradePoints);
+                    console.log(score[i]);
+                }}}}} 
+                else {
+                console.log("No user inputs for question", questionId);
+                }} 
+              
+                })
+                }
+
+                }
+
+
+
+                else if (type === 4){
+                const answers = question.answerOptions;
+                answers.forEach(answerr => {
+                for (let i = 0; i <numberOfQuestions; i++) {
+                const questionId = \`q\${i}\`; 
+                const userInputArrayForQuestion = userInputArrays[questionId];
+                console.log(userInputArrayForQuestion);
+                if (userInputArrayForQuestion.length > 0) {
+                const firstName = userInputArrayForQuestion[0].name; // Access the name property of the first element because in case even many answer options still all the answers have the same ame so we take only the first
+                if (userInputArrayForQuestion[0].name === question.name){
+                for (let j = 0; j <userInputArrayForQuestion.length;j++){
+                if(userInputArrayForQuestion[j].value === answerr.answerText){
+                  if(score[i] == 0){
+                    score[i] += parseInt(answerr.gradePoints);
+                    console.log(score[i]);
+                }}}}} 
+                else {
+                console.log("No user inputs for question", questionId);
+                }} 
+              
+                })
                 }
               
+
 
                 })
 
@@ -343,10 +436,10 @@
                     \`;
 
                     // Open the results page in a new window/tab
-                    const resultsWindow = window.open('', '_blank');
-                    resultsWindow.document.open();
-                    resultsWindow.document.write(resultsPage);
-                    resultsWindow.document.close();
+                    //const resultsWindow = window.open('', 'decodedFileName');
+                    document.open();
+                    document.write(resultsPage);
+                    document.close();
                     }
 
                     // Add an event listener to the Submit button to trigger data collection
