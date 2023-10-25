@@ -131,6 +131,7 @@
             <body>
             <div class="container" id="container">
               <h1 id ="title">Quiz Title</h1>
+              <div id="scoreBox"><h1 id="scoreText"></h1></div>
               <script>
                 const test = ${JSON.stringify(selectedQuestions)};                
                  // Get the current URL
@@ -156,18 +157,28 @@
               html += `${questionText}`;
               if (type === 2) {
                 html += `<input type="text" name='${questionData.name}' />\n`;
+                html += `<pre hidden="hidden" id="hiddenElement">` +questionData.generalfeedback+ `</pre>`;
               } else if (type === 1) {
                 const answers = questionData.answerOptions;
                 answers.forEach(answer => {
-                  html += `<input type="checkbox" name='${questionData.name}' value='${answer.answerText}' /> ${answer.answerText}<br>\n`;
+                  if (questionData.HasSingleCorrectAnswer === true){
+                    html += `<input type="radio" name='${questionData.name}' value='${answer.answerText}' /> ${answer.answerText}<br>\n`;
+                    html += `<pre hidden="hidden" id="hiddenElement">` + answer.answerOptionFeedback + `</pre>`;
+                  }
+                  else{
+                    html += `<input type="checkbox" name='${questionData.name}' value='${answer.answerText}' /> ${answer.answerText}<br>\n`;
+                    html += `<pre hidden="hidden" id="hiddenElement">` + answer.answerOptionFeedback + `</pre>`;
+                  }
                 });
               } else if (type === 3){
                 html += `<input type="txt" name='${questionData.name}' /> \n`;
+                html += `<pre hidden="hidden" id="hiddenElement">` + questionData.generalfeedback + `</pre>`;
               }
               else if (type === 4) {
                 const answers = questionData.answerOptions;
                 answers.forEach(answer => {
                   html += `<input type="radio" name='${questionData.name}' value='${answer.answerText}' /> ${answer.answerText}<br>\n`;
+                  html += `<pre hidden="hidden" id="hiddenElement>` + answer.answerOptionFeedback + `</pre>`;
                 });
               }
               html += `</div>\n`;
@@ -434,12 +445,26 @@
                         </body>
                         </html>
                     \`;
+                const finalResult = \`Your Score: \${result/100} Out of \${numberOfQuestions}\`;
 
                     // Open the results page in a new window/tab
                     //const resultsWindow = window.open('', 'decodedFileName');
-                    document.open();
-                    document.write(resultsPage);
-                    document.close();
+                    //document.open();
+                    //document.write(resultsPage);
+                    //document.close();
+                    const scoreTxt = document.getElementById("scoreText");
+                    scoreTxt.textContent =  finalResult;
+                    window.alert(finalResult);
+                    for(let i = 0; i< numberOfQuestions; i++){                                                     //loop to collect hidden elements 
+                      const Temp = document.getElementById("q"+i.toString()).querySelectorAll('#'+'hiddenElement');
+                      //console.log(Temp.length);
+                      //Temp.removeAttribute("hidden");
+                      for(let i  = 0; i<Temp.length; i++){
+                        innerTemp = Temp[i];
+                        innerTemp.removeAttribute("hidden");
+                        innerTemp.style.color = "#ff0000";
+                      }
+                    }
                     }
 
                     // Add an event listener to the Submit button to trigger data collection
